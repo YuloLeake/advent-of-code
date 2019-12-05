@@ -12,6 +12,7 @@ Valid password criteria:
 from itertools import groupby
 
 def is_ascending(password: str) -> bool:
+    # Criteria 4
     return ''.join(sorted(password)) == password
 
 
@@ -35,7 +36,7 @@ def is_valid_pw(password: str) -> bool:
 def meets_part_2(password: str) -> bool:
     """ Check whether given password meets Criteria 5 (part 2). """
     adjacents = [''.join(group) for _, group in groupby(password)]
-    adjacents = [adj for adj in adjacents if len(adj) == 2]
+    adjacents = [adj for adj in adjacents if len(adj) == 2] # Criteria 5
     return len(adjacents) > 0
 
 
@@ -46,19 +47,16 @@ if __name__ == '__main__':
     pws = 0
     for i in range(start, end+1): # Criteria 3
         pw = str(i)
-        if is_ascending(pw): # Criteria 4
-            # Criteria 1 and 2
-            pws += 1 if is_valid_pw(pw) else 0
+        is_valid = is_ascending(pw) and is_valid_pw(pw)
+        pws += 1 if is_valid else 0
     print(f'part 1 = {pws}')
 
     # Part 2
     start = 158126
     end   = 624574
-
     pws = 0
     for i in range(start, end+1): # Criteria 3
         pw = str(i)
-        if is_ascending(pw): # Criteria 4
-            # Criteria 1, 2, and 5
-            pws += 1 if is_valid_pw(pw) and meets_part_2(pw) else 0
+        is_valid = is_ascending(pw) and is_valid_pw(pw) and meets_part_2(pw)
+        pws += 1 if is_valid else 0
     print(f'part 2 = {pws}')
