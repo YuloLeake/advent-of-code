@@ -24,19 +24,14 @@ def is_valid_pw(password: str, part_2=False) -> bool:
     # criteria 2
     adjacents = [''.join(group) for _, group in groupby(password)]
     adjacents = [adj for adj in adjacents if len(adj) > 1]
-    has_same_adjacent = len(adjacents) > 0
+    has_good_adjacent = len(adjacents) > 0
 
-    # criteria 2
-    adjacents = [''.join(group) for _, group in groupby(password)]
-    adjacents = [adj for adj in adjacents if len(adj) > 1]
-    has_same_adjacent = len(adjacents) > 0
-
-    if has_same_adjacent and part_2:
+    if has_good_adjacent and part_2:
         # criteria 5
         adjacents = [adj for adj in adjacents if len(adj) < 3]
-        has_same_adjacent = len(adjacents) > 0
+        has_good_adjacent = len(adjacents) > 0
 
-    return is_six_digit and has_same_adjacent
+    return is_six_digit and has_good_adjacent
 
 
 
