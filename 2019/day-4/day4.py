@@ -41,20 +41,8 @@ def meets_part_2(password: str) -> bool:
 
 if __name__ == '__main__':
     # Part 1
-    pws = {
-        '111111': True,
-        '111123': True,
-        '135679': False,
-        '122345': True,
-        '223450': False,
-        '123789': False
-    }
-    for pw in pws.keys():
-        assert (is_ascending(pw) and is_valid_pw(pw)) == pws[pw]
-
     start = 158126
     end   = 624574
-
     pws = 0
     for i in range(start, end+1): # Criteria 3
         pw = str(i)
@@ -64,17 +52,6 @@ if __name__ == '__main__':
     print(f'part 1 = {pws}')
 
     # Part 2
-    pws = {
-        '112233': True,
-        '123444': False,
-        '111122': True, # 1111 is bad, but 22 is good, so good
-        '111123': False, # 1111 is bad, no good adjacent
-    }
-
-    for pw in pws.keys():
-        is_valid = is_ascending(pw) and is_valid_pw(pw) and meets_part_2(pw)
-        assert is_valid == pws[pw]
-
     start = 158126
     end   = 624574
 
