@@ -1,7 +1,7 @@
 from typing import NamedTuple, List
 import unittest
 
-from day1 import fuel
+from day1 import fuel, fuel_for_fuel
 
 class Example(NamedTuple):
     mass: int
@@ -22,7 +22,15 @@ class TestDay1(unittest.TestCase):
 
 
     def test_part_2(self):
-        pass
+        test_cases = [
+            Example(12, 2),
+            Example(14, 2),
+            Example(1969, 966),
+            Example(100756, 50346)
+        ]
+        
+        for case in test_cases:
+            self.assertEqual(fuel_for_fuel(case.mass), case.fuel)
 
 if __name__ == '__main__':
     unittest.main()
