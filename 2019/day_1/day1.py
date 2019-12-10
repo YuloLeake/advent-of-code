@@ -12,5 +12,8 @@ def fuel(mass: int):
 
 if __name__ == '__main__':
     # Part 1
-    with open('sequence.txt', 'r') as f:
+    with open('modules.txt', 'r') as f:
         modules = f.readlines()
+
+    fuel_required = sum(fuel(int(mass)) for mass in modules)
+    print(fuel_required)
