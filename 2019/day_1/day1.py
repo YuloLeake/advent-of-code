@@ -1,19 +1,16 @@
-""" Day 1: Chronal Calibration
+""" Day 1: The Tyranny of the Rocket Equation
 
-Part1: Given a sequence of changes in frequency, solve for the resulting frequency.
+Part1: Fule = floor(mass / 3) - 2
 """
+import math
 from typing import List
 
-def frequency(values: List[str]):
-    return sum(int(value) for value in values)
+def fuel(mass: int):
+    return math.floor(mass / 3) - 2
 
 
-def first_repeat(values: List[str]):
-    pass
 
 if __name__ == '__main__':
     # Part 1
     with open('sequence.txt', 'r') as f:
-        data = f.readlines()
-
-    print(frequency(data))
+        modules = f.readlines()
