@@ -20,7 +20,6 @@ def is_valid_pw(password: str) -> bool:
     """ Whether given password is valid or not.
 
     Covers criteria 1 and 2.
-    Also covers criteria 5 when part_2 is True
     """
     # criteria 1
     is_six_digit = len(password) == 6
