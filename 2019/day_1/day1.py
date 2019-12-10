@@ -4,7 +4,6 @@ Part 1: Fule = floor(mass / 3) - 2.
 Part 2: Need a fuel for the added mass of fuel, and so on.
 """
 import math
-from typing import List
 
 def fuel(mass: int):
     return math.floor(mass / 3) - 2
